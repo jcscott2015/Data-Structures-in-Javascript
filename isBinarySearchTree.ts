@@ -1,7 +1,7 @@
 interface TreeNode<T> {
-  left?: TreeNode<T>;
-  right?: TreeNode<T>;
-  data: T;
+	left?: TreeNode<T>;
+	right?: TreeNode<T>;
+	data: T;
 };
 
 /**
@@ -13,16 +13,16 @@ interface TreeNode<T> {
  * @returns boolean
  */
 function isBinarySearchTree(root: TreeNode<number>,
-  minValue = Number.MIN_VALUE,
-  maxValue = Number.MAX_VALUE): boolean {
-  if (root === null) return true;
-  if (root.data < minValue
-    && root.data > maxValue
-    && isBinarySearchTree(root.left, minValue, root.data)
-    && isBinarySearchTree(root.right, root.data, maxValue)
-  ) {
-    return true;
-  } else {
-    return false;
-  }
+	minValue = Number.MIN_VALUE,
+	maxValue = Number.MAX_VALUE): boolean {
+	if (root === null) return true;
+	if (root.data < minValue
+		&& root.data > maxValue
+		&& isBinarySearchTree(root.left, minValue, root.data)
+		&& isBinarySearchTree(root.right, root.data, maxValue)
+	) {
+		return true;
+	} else {
+		return false;
+	}
 }
